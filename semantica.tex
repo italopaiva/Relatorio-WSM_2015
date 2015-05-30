@@ -1,0 +1,42 @@
+\input{fixos/pacotes}
+\input{fixos/comandos}
+\input{fixos/novosComandos}
+
+\input{editaveis/informacoes}
+\input{fixos/informacoes}
+\input{fixos/setup}
+
+\usepackage{float}
+
+\begin{document}
+
+\frenchspacing
+\imprimircapa
+\imprimirfolhaderosto*
+
+\input{fixos/listasAutomaticas}
+\pagebreak
+\input{fixos/indiceAutomatico}
+
+\textual
+
+
+\input{editaveis/capitulos/introducao}
+\input{editaveis/capitulos/referencial}
+% \input{editaveis/capitulos/dadosabertos}
+% \input{editaveis/capitulos/penaestrada}
+% \input{editaveis/capitulos/ontologias}
+
+
+\bookmarksetup{startatroot}
+
+\postextual
+
+% \input{editaveis/capitulos/apendices}
+% \input{editaveis/capitulos/anexos}
+\printindex
+
+
+\bibliography{bibliografia}{}
+\end{document}
+
