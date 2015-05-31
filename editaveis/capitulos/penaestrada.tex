@@ -1,0 +1,53 @@
+\chapter{\textit{Software} 'Pé na Estrada'}
+
+A disponibilização das ocorrências de acidentes em rodovias federais através da PRF,
+embora exista, não é realizada de forma visual. Todavia, consiste na disponibilização de
+planilhas complexas que contém muitos dados.
+
+O software “Pé na estrada” foi desenvolvido, utilizando os dados divulgados pela
+PRF, com a finalidade de apresentar essas informações de forma mais atrativa e visual. Dessa
+forma, é um sistema que permite buscar informações sobre as rodovias federais, visualizando
+as rodovias com maiores índices de acidentes. A aplicação também permite traçar rotas para
+visualizar os trechos mais perigosos, e os acidentes ocorridos ao longo da rota. Há também a
+possibilidade dos usuários fazerem comentários sobre as rodovias. Algumas imagens do
+software podem ser vistas no Anexo A.
+
+Os dados disponibilizados possuem muitas informações acerca do acidente, como tipo
+do acidente, dano causado à rodovia e tipo de veículo. Contudo, esse tipo de informação não
+foi tratado na aplicação, pois esses dados estavam estruturados de forma complexa e
+inconsistente. Os relacionamentos entre os dados eram feitos por meio de uma grande
+quantidade de tabelas relacionadas, o que dificultaria a apresentação desses dados na
+aplicação, tornando o sistema lento e demasiado complexo de se manter. O modelo de dados
+utilizado na aplicação pode ser visto na Figura \ref{fig:modelo_penaestrada}.
+
+\begin{figure}[!htb]
+ \centering
+ \includegraphics[scale = 0.4]{modelo_penaestrada}
+ \caption[Modelo de dados do software “Pé na Estrada”]{Modelo de dados do software “Pé na Estrada”.}
+ \label{fig:modelo_penaestrada}
+\end{figure}
+
+  \section{Mudanças no \textit{Software}}
+  
+    Atualmente, o “Pé na estrada” disponibiliza informações apenas sobre os locais dos
+    acidentes, e a quantidade de acidentes em cada rodovia. Esse tipo de informação seria mais
+    relevante se acompanhassem informações acerca dos tipos de acidentes, danos causados a
+    rodovia, tipo de veículo, envolvidos, entre outros dados que fossem relevantes para análise
+    estatística e para representação gráfica.
+
+    Dessa forma, com o modelo de dados estruturado semanticamente, esses dados seriam
+    encontrados e relacionados facilmente, possibilitando ao software disponibilizar essas
+    informações ao usuário, até mesmo de forma mais visual.
+
+    Atualmente, o software não possui nenhuma camada semântica presente, possuindo
+    apenas a camada visual do HTML, sendo necessária toda a estruturação das três principais
+    camadas semânticas: o XML, o RDFS e a OWL, sendo esta última necessária para o uso da
+    ontologia que será criada para representar os acidentes de trânsito.
+
+    Mudanças na estrutura do banco de dados utilizado também serão necessárias para
+    comportar os novos tipos de dados que irão surgir. Como o software não possui as
+    funcionalidades inerentes a outros tipos de dados sobre acidentes (como tipo do acidente, tipo
+    de veículo, envolvidos, etc.), estas terão que ser criadas, impactando significativamente na
+    estrutura do código e, talvez, da aplicação em si.
+    
+    

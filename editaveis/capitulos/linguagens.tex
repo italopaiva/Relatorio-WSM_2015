@@ -1,0 +1,45 @@
+\section{Linguagens de ontologias}
+
+A ideia inicial de Tim Bernes Lee para a web semântica é uma arquitetura baseada em
+camadas, de forma que as camadas se sobreponham e se completem adicionando cada vez
+mais semântica aos dados, mas mantendo a escalabilidade \cite{breitman05}. Dessa forma
+é possível representar semanticamente uma página web da maneira mais simples para uma
+máquina que não possua todo o arcabouço semântico necessário para visualizar todo o leque
+de opções, da mesma forma que é possível outra máquina com capacidade de interpretar as
+camadas semânticas superiores também visualizar da forma mais completa, semanticamente,
+a página requisitada.
+
+A primeira camada dessa arquitetura escalar da web é a Hypertext Markup Language
+(HTML), que lida com o conteúdo da informação e sua apresentação para os seres humanos,
+fornecendo pouca expressividade para os dados e suas estruturas \cite{breitman05}.
+Subindo mais um degrau da arquitetura web, a forma mais simples de representar
+semanticamente um documento é feita por meio da linguagem eXtensible Markup Language
+(XML), que é uma linguagem de marcação flexível que permite a criação de tags pelo
+usuário, o que possibilita criar uma representação semântica para cada pedaço da informação
+de um documento e para as relações entre esses pedaços, relacionando-os por meio de
+aninhamento das tags. O XML começou a se preocupar com a representação da estrutura do
+documento apresentado \cite{breitman05}.
+
+O Resource Description Framework (RDF) é uma linguagem declarativa que se baseia
+no XML, fornecendo uma maneira padronizada de utilizá-lo. Uma das propostas do RDF é
+fazer com que os recursos da web sejam legíveis e acessíveis por máquinas (BREITMAN,
+2005). Permite descrever sentenças sobre propriedades e relacionamentos entre itens na web,
+destacando três componentes para a sentença: recurso, propriedade e valor, que se
+assemelham ao sujeito, predicado e objeto de uma oração qualquer da língua portuguesa,
+respectivamente. O RDF conta com uma linguagem de suporte para descrever o vocabulário
+que será utilizado pelo documento RDF, o RDF-Schema. O RDF veio para adicionar uma
+camada mais semântica para a web, sobrepondo a camada já fornecida pelo XML.
+
+O RDF e o RDF-Schema (RDFS, combinação entre as duas linguagens) representam a
+base para a web semântica. Apesar de várias linguagens para ontologias importantes terem
+sido propostas ao longo do tempo com base em extensões do RDFS (como SHOE, Oil,
+DAML, DAML+Oil), será descrita apenas a Web Ontology Language (OWL), que acabou
+representando um resultado final dos esforços das outras linguagens, e é hoje uma
+recomendação do W3C no que tange a linguagens ontológicas \cite{breitman05}.
+
+A OWL é uma linguagem que foi projetada para resolver problemas inerentes às aplicações
+da Web Semântica, permitindo a construção de ontologias, explicitação de fatos sobre um
+domínio específico e racionalizar sobre ontologias e fatos \cite{breitman05}. O objetivo
+dessa linguagem é representar conceitos e seus respectivos relacionamentos como uma
+ontologia, e possui três linguagens com diferentes níveis de expressividade: OWL Lite, OWL
+DL e OWL Full.
