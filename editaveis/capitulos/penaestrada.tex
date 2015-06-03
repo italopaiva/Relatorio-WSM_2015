@@ -27,27 +27,5 @@ utilizado na aplicação pode ser visto na Figura \ref{fig:modelo_penaestrada}.
  \label{fig:modelo_penaestrada}
 \end{figure}
 
-  \section{Mudanças no \textit{Software}}
+  \input{editaveis/capitulos/planejamentoDaAplicacao}
   
-    Atualmente, o “Pé na estrada” disponibiliza informações apenas sobre os locais dos
-    acidentes, e a quantidade de acidentes em cada rodovia. Esse tipo de informação seria mais
-    relevante se acompanhassem informações acerca dos tipos de acidentes, danos causados a
-    rodovia, tipo de veículo, envolvidos, entre outros dados que fossem relevantes para análise
-    estatística e para representação gráfica.
-
-    Dessa forma, com o modelo de dados estruturado semanticamente, esses dados seriam
-    encontrados e relacionados facilmente, possibilitando ao software disponibilizar essas
-    informações ao usuário, até mesmo de forma mais visual.
-
-    Atualmente, o software não possui nenhuma camada semântica presente, possuindo
-    apenas a camada visual do HTML, sendo necessária toda a estruturação das três principais
-    camadas semânticas: o XML, o RDFS e a OWL, sendo esta última necessária para o uso da
-    ontologia que será criada para representar os acidentes de trânsito.
-
-    Mudanças na estrutura do banco de dados utilizado também serão necessárias para
-    comportar os novos tipos de dados que irão surgir. Como o software não possui as
-    funcionalidades inerentes a outros tipos de dados sobre acidentes (como tipo do acidente, tipo
-    de veículo, envolvidos, etc.), estas terão que ser criadas, impactando significativamente na
-    estrutura do código e, talvez, da aplicação em si.
-    
-    
