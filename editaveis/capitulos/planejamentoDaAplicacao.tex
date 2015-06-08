@@ -25,3 +25,15 @@ A partir disso, o sistema funciona com a arquitetura da Figura \ref{fig:arquitet
  \label{fig:arquitetura}
 
 \end{figure}
+
+O \textit{Rails router} é responsável por estabelecer routas que comunica o sistema com o navegador. Essa rota é obtida
+na \textit{Controller} que a partir disso gera a \textit{View}. Os dados são obtidos e armazenados na base de dados através da \textit{Model}
+que extende do \textit{Active Record} que é a classe responsável por fornecer os meios de comunicação com a camada de dados.
+
+Para fazer a comunicação da aplicação com a ontologia definida é necessário substituir a comunicação da \textit{Model} que ao invés
+de estabelecer relação com a \textit{Active Record} deve estabelecer relação com dados em RDF.
+
+Existe um \textit{framework} chamado \textit{Active RDF} \footnotemark[1] que substitui a \textit{Active Record} e estabelece um relacionamento
+do sistema com os dados contidos na ontologia. 
+
+\footnotetext[1]{http://www.activerdf.org/}
