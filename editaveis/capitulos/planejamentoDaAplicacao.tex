@@ -1,0 +1,39 @@
+\subsection{Planejamento da aplicação da ontologia no ``Pé na Estrada''}
+
+Atualmente, o “Pé na estrada” disponibiliza informações apenas sobre os locais dos
+acidentes, e a quantidade de acidentes em cada rodovia. Esse tipo de informação seria mais
+relevante se acompanhassem informações acerca dos tipos de acidentes, danos causados a
+rodovia, tipo de veículo, envolvidos, entre outros dados que fossem relevantes para análise
+estatística e para representação gráfica.
+
+Dessa forma, com o modelo de dados estruturado semanticamente, esses dados seriam
+encontrados e relacionados facilmente, possibilitando ao software disponibilizar essas
+informações ao usuário, até mesmo de forma mais visual.
+
+Atualmente, o software não possui nenhuma camada semântica presente, possuindo
+apenas a camada visual do HTML, sendo necessária toda a estruturação das três principais
+camadas semânticas: o XML, o RDFS e a OWL, sendo esta última necessária para o uso da
+ontologia que será criada para representar os acidentes de trânsito.
+
+O software ``Pé na Estrada'' foi desenvolvido na linguagem \textit{Ruby} com a utilização do \textit{framework Rails}. 
+A partir disso, o sistema funciona com a arquitetura da Figura \ref{fig:arquitetura}
+
+\begin{figure}[!htb]
+ \centering
+ \includegraphics[scale = 0.7]{figuras/arquiteturarails.png}
+ \caption{Arquitetura do sistema}
+ \label{fig:arquitetura}
+
+\end{figure}
+
+O \textit{Rails router} é responsável por estabelecer routas que comunica o sistema com o navegador. Essa rota é obtida
+na \textit{Controller} que a partir disso gera a \textit{View}. Os dados são obtidos e armazenados na base de dados através da \textit{Model}
+que extende do \textit{Active Record} que é a classe responsável por fornecer os meios de comunicação com a camada de dados.
+
+Para fazer a comunicação da aplicação com a ontologia definida é necessário substituir a comunicação da \textit{Model} que ao invés
+de estabelecer relação com a \textit{Active Record} deve estabelecer relação com dados em RDF.
+
+Existe um \textit{framework} chamado \textit{Active RDF} \footnotemark[1] que substitui a \textit{Active Record} e estabelece um relacionamento
+do sistema com os dados contidos na ontologia. 
+
+\footnotetext[1]{http://www.activerdf.org/}

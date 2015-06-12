@@ -1,0 +1,31 @@
+\chapter{\textit{Software} 'Pé na Estrada'}
+
+A disponibilização das ocorrências de acidentes em rodovias federais através da PRF,
+embora exista, não é realizada de forma visual. Todavia, consiste na disponibilização de
+planilhas complexas que contém muitos dados.
+
+O software “Pé na estrada” foi desenvolvido, utilizando os dados divulgados pela
+PRF, com a finalidade de apresentar essas informações de forma mais atrativa e visual. Dessa
+forma, é um sistema que permite buscar informações sobre as rodovias federais, visualizando
+as rodovias com maiores índices de acidentes. A aplicação também permite traçar rotas para
+visualizar os trechos mais perigosos, e os acidentes ocorridos ao longo da rota. Há também a
+possibilidade dos usuários fazerem comentários sobre as rodovias. Algumas imagens do
+software podem ser vistas no Anexo A.
+
+Os dados disponibilizados possuem muitas informações acerca do acidente, como tipo
+do acidente, dano causado à rodovia e tipo de veículo. Contudo, esse tipo de informação não
+foi tratado na aplicação, pois esses dados estavam estruturados de forma complexa e
+inconsistente. Os relacionamentos entre os dados eram feitos por meio de uma grande
+quantidade de tabelas relacionadas, o que dificultaria a apresentação desses dados na
+aplicação, tornando o sistema lento e demasiado complexo de se manter. O modelo de dados
+utilizado na aplicação pode ser visto na Figura \ref{fig:modelo_penaestrada}.
+
+\begin{figure}[!htb]
+ \centering
+ \includegraphics[scale = 0.4]{modelo_penaestrada}
+ \caption[Modelo de dados do software “Pé na Estrada”]{Modelo de dados do software “Pé na Estrada”.}
+ \label{fig:modelo_penaestrada}
+\end{figure}
+
+  \input{editaveis/capitulos/planejamentoDaAplicacao}
+  
