@@ -12,6 +12,7 @@
    
       \input{editaveis/capitulos/ontologias_acidentes}
       
+    \pagebreak
     \subsection{Estrutura da ontologia}
 
 	  Com a escolha da metodologia 101 a primeira etapa consiste na definição de classes na ontologia.
@@ -24,56 +25,71 @@
 	  A partir do levantamento dos principais termos, foi realizado um mapa conceitual inicial com o intuito
 	  de organizar as classes em uma hierarquia, que consiste na segunda etapa da construção.
 
-% \pagebreak
-% \begin{figure}[!h]
-%  \centering
-%  \includegraphics[scale = 0.5, angle = -90]{figuras/Acidentes.png}
-%  \caption{Mapa Conceitual Ontologia de Acidentes}
-%  \label{fig:acidentes}
-% 
-% \end{figure}
-\subsubsection{Classes e Propriedades}
+      \subsubsection{Classes e Propriedades}
+      
+      Como não foi possível encontrar o código OWL das ontologias pesquisadas, a equipe decidiu aproveitar a
+      modelagem conceitual feita nos trabalhos encontrados. A partir desses modelos, foi construído o modelo 
+      para a ontologia, ilustrado na figura \ref{fig:modelo_conceitual_ontologia}.
+      
+      Após a elaboração do mapa conceitual inicial as propriedades entre as classes foram definidas e as ontologias encontradas foram utilizadas. 
+      Na tabela \ref{tab:classes} está a lista de classes
+      e as propriedades que elas possuem.      
 
-Após a elaboração do mapa conceitual inicial as propriedades entre as classes foram definidas e as ontologias encontradas foram utilizadas. 
-Na tabela \ref{tab:classes} está a lista de classes
-e as propriedades que elas possuem.      
+      \begin{table*}[!h]
+      \centering
+      \begin{tabular}{p{0.15\linewidth}p{0.15\linewidth}}
+	\hline
+	\textbf{Classe} & \textbf{Propriedade} \\
+	\hline
+	  Acidente & tem\_tipo\\
+	    & tem\_causa\\
+	    & ocorre\\
+	    & esta\_contido\\
+	\hline
+	  Veículo & esta\_envolvido\\
+	    & tem\_ocupante\\
+	\hline
+	  Ocupante & viaja\_em\\
+	    & motorista\\
+	    & proprietario\\
+	\hline
+	  Local & tem\_acidente\\
+	    & tem\_coordenada\\
+	    & esta\_contido\\
+	    & condicoes\_rodovias\\
+	\hline
+	  Rodovia & tem\_estatistica\\
+	    & contem\\
+	    & tem\_postos\_prf\\
+	    & tem\_hospital\\
+	    & tem\_assistencia\\
+	\hline
+	  Estatística & acerca\\
+	\hline
+      \end{tabular}
+      \caption{Classes e Propriedades}
+      \label{tab:classes}
+      \end{table*}
+      
+      Os relacionamentos entre as classes podem ser vistos melhor no modelo conceitual da ontologia ilustrado na
+      Figura \ref{fig:modelo_conceitual_ontologia}.\\
+      
+      \begin{figure}[!htb]
+	\centering
+	\includegraphics[scale = 0.23]{modelo_conceitual_ontologia}
+	\caption[Modelo conceitual da ontologia]{Modelo conceitual da ontologia a ser construída}
+	\label{fig:modelo_conceitual_ontologia}
+      \end{figure}
+      
+      Essas classes foram modeladas na ferramenta Protégé \footnotemark[2], de acordo com o modelo conceitual final
+      apresentado na Figura \ref{fig:modelo_conceitual_ontologia}.
 
-\begin{table*}[!h]
-\centering
-\caption{Classes e Propriedades}
-\label{tab:classes}
- \begin{tabular}{p{0.15\linewidth}p{0.15\linewidth}}
-  \hline
-  Classe & Propriedade \\
-  \hline
-    Acidente & tem\_tipo\\
-      & tem\_causa\\
-      & ocorre\\
-      & esta\_contido\\
-      \hline
-  Veículo & esta\_envolvido\\
-    & tem\_ocupante\\
-    \hline
-  Local & tem\_acidente\\
-    & tem\_coordenada\\
-    & esta\_contido\\
-    & condicoes\_rodovias\\
-  \hline
-  Rodovia & tem\_estatistica\\
-  \hline
-  Estatística & acerca\\
-  \hline
- \end{tabular}
-
-\end{table*}
-
-Essas classes foram modeladas na ferramenta Protégé\footnotemark[2], de acordo com o modelo conceitual final que pode ser visto na Figura \ref{fig:modelo_conceitual_ontologia}.
-
-\footnotetext[2]{http://protege.stanford.edu/}
+      \footnotetext[2]{http://protege.stanford.edu/}
 	
-    \subsubsection{Modelo conceitual da ontologia}
+
+      
+      
     
-      \input{editaveis/capitulos/modelo_conceitual_ontologia}
     
       
   
