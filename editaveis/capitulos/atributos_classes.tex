@@ -1,0 +1,124 @@
+% Classe Acidente
+\noindent
+\emph{\textbf{Acidente}}
+
+  A classe Acidente pode ser considerada como a classe central para a aplicação e para a ontologia,
+  uma vez que todas as outras classes estão relacionadas a um acidente ocorrido.
+  
+    \begin{table*}[!h]
+    \centering
+    \begin{tabular}{p{0.15\linewidth}p{0.2\linewidth}p{0.5\linewidth}}
+      \hline
+      \textbf{Classe} & \textbf{Atributo} & \textbf{Descrição}\\
+      \hline
+	Acidente & data\_acidente & Data da ocorrência do acidente\\
+		  & hora\_acidente & Horário da ocorrência do acidente\\ 
+      \hline
+    \end{tabular}
+    \caption{Atributos da classe Acidente}
+    \label{tab:attr_acidente}
+    \end{table*}
+    
+% Classe Veículo
+\noindent
+\emph{\textbf{Veículo}}
+
+  A classe Veículo representa os veículos envolvidos em um acidente.
+  
+    \begin{table*}[!h]
+    \centering
+    \begin{tabular}{p{0.15\linewidth}p{0.22\linewidth}p{0.5\linewidth}}
+      \hline
+      \textbf{Classe} & \textbf{Atributo} & \textbf{Descrição}\\
+      \hline
+	Veiculo & tipo\_veiculo & Tipo do veículo (Ex.: Hatch, sedan, caminhonete)\\
+		& modelo\_veiculo & Modelo do veículo\\
+		& ano\_veiculo & Ano do veículo\\		
+		& km\_veiculo & Quilometragem do veículo no momento do acidente\\
+		& defeitos\_veiculo & Defeitos encontrados no veículo no momento do acidente\\
+		& quantidade\_pessoas & Quantidade de pessoas dentro do veículo no momento do acidente\\
+      \hline
+    \end{tabular}
+    \caption{Atributos da classe Veículo}
+    \label{tab:attr_veiculo}
+    \end{table*}
+
+\vfill
+\pagebreak
+
+% Classe Ocupante
+\noindent
+\emph{\textbf{Ocupante}}
+
+  A classe Ocupante representa as pessoas que podem estar dentro de um veículo no momento do acidente.
+  
+    \begin{table*}[!h]
+    \centering
+    \begin{tabular}{p{0.15\linewidth}p{0.23\linewidth}p{0.5\linewidth}}
+      \hline
+      \textbf{Classe} & \textbf{Atributo} & \textbf{Descrição}\\
+      \hline
+	Ocupante & sexo & Modelo do veículo\\
+		 & idade\_pessoa & Idade da pessoa\\
+		 & usava\_cinto & Indica se o ocupante do veículo estava usando o cinto de segurança\\
+		 & estado\_mental* & Indica o estado mental do motorista no momento do acidente\\
+		 & sob\_efeito\_toxicos* & Indica se o motorista estava sob efeito de tóxicos no momento do acidente\\
+		 & uf\_cnh\_motorista* & UF da CNH do motorista\\
+      \hline
+    \end{tabular}
+    *Atributos específicos para instâncias com a relação 'motorista'.
+
+    \caption{Atributos da classe Ocupante}
+    \label{tab:attr_ocupante}
+    \end{table*}
+    
+% Classe Local
+\noindent
+\emph{\textbf{Local}}
+
+  A classe Local representa o local, dentro de uma rodovia, no qual um acidente ocorreu.
+  
+    \begin{table*}[!h]
+    \centering
+    \begin{tabular}{p{0.15\linewidth}p{0.23\linewidth}p{0.5\linewidth}}
+      \hline
+      \textbf{Classe} & \textbf{Atributo} & \textbf{Descrição}\\
+      \hline
+	Local & latitude & Latitude em que ocorreu o acidente\\
+	      & longitude & Longitude em que ocorreu o acidente\\
+	      & km\_rodovia & Indica em qual quilômetro da rodovia ocorreu o acidente\\
+	      & ponto\_referencia & Indica um ponto de referência próximo ao local do acidente\\
+	      & regiao\_urbana & Indica se a área do acidente é uma região urbana\\
+	      & volume\_trafego & Indica o volume de tráfego na região\\
+      \hline
+    \end{tabular}
+    \caption{Atributos da classe Local}
+    \label{tab:attr_local}
+    \end{table*}
+
+\vfill
+\pagebreak
+    
+% Classe Rodovia
+\noindent
+\emph{\textbf{Rodovia}}
+
+  A classe Rodovia representa as rodovias federais brasileiras. No domínio da aplicação, todo acidente ocorre em uma rodovia.
+  
+    \begin{table*}[!h]
+    \centering
+    \begin{tabular}{p{0.15\linewidth}p{0.23\linewidth}p{0.5\linewidth}}
+      \hline
+      \textbf{Classe} & \textbf{Atributo} & \textbf{Descrição}\\
+      \hline
+	Rodovia & nome\_rodovia & Nome da rodovia (Ex.: BR-060)\\
+		& extensao\_rodovia & Indica o tamanho da rodovia\\
+		& estado\_rodovia & Identifica quais estados brasileiros que a rodovia percorre\\
+		& posto\_prf & Identifica um posto da PRF ao longo da rodovia\\
+      \hline
+    \end{tabular}
+    \caption{Atributos da classe Rodovia}
+    \label{tab:attr_rodovia}
+    \end{table*}
+    
+\vfill    
