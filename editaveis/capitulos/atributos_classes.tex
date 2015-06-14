@@ -1,6 +1,5 @@
 % Classe Acidente
-\noindent
-\emph{\textbf{Acidente}}
+\subsubsection{\textbf{Acidente}}
 
   A classe Acidente pode ser considerada como a classe central para a aplicação e para a ontologia,
   uma vez que todas as outras classes estão relacionadas a um acidente ocorrido.
@@ -12,7 +11,8 @@
       \textbf{Classe} & \textbf{Atributo} & \textbf{Descrição}\\
       \hline
 	Acidente & data\_acidente & Data da ocorrência do acidente\\
-		  & hora\_acidente & Horário da ocorrência do acidente\\ 
+		 & hora\_acidente & Horário da ocorrência do acidente\\
+		 & danos\_causados & Descrição dos danos causados pelo acidente\\
       \hline
     \end{tabular}
     \caption{Atributos da classe Acidente}
@@ -20,8 +20,7 @@
     \end{table*}
     
 % Classe Veículo
-\noindent
-\emph{\textbf{Veículo}}
+\subsubsection{\textbf{Veículo}}
 
   A classe Veículo representa os veículos envolvidos em um acidente.
   
@@ -43,12 +42,11 @@
     \label{tab:attr_veiculo}
     \end{table*}
 
-\vfill
-\pagebreak
+% \vfill
+% \pagebreak
 
 % Classe Ocupante
-\noindent
-\emph{\textbf{Ocupante}}
+\subsubsection{\textbf{Ocupante}}
 
   A classe Ocupante representa as pessoas que podem estar dentro de um veículo no momento do acidente.
   
@@ -73,8 +71,7 @@
     \end{table*}
     
 % Classe Local
-\noindent
-\emph{\textbf{Local}}
+\subsubsection{\textbf{Local}}
 
   A classe Local representa o local, dentro de uma rodovia, no qual um acidente ocorreu.
   
@@ -96,12 +93,11 @@
     \label{tab:attr_local}
     \end{table*}
 
-\vfill
-\pagebreak
+% \vfill
+% \pagebreak
     
 % Classe Rodovia
-\noindent
-\emph{\textbf{Rodovia}}
+\subsubsection{\textbf{Rodovia}}
 
   A classe Rodovia representa as rodovias federais brasileiras. No domínio da aplicação, todo acidente ocorre em uma rodovia.
   
@@ -120,5 +116,136 @@
     \caption{Atributos da classe Rodovia}
     \label{tab:attr_rodovia}
     \end{table*}
+
+% Classe Estatística    
+\subsubsection{\textbf{Estatística}}
+
+  A classe Estatística representa as estatísticas que pode se inferir sobre os acidentes ocorridos em uma rodovia.
+  
+    \begin{table*}[!h]
+    \centering
+    \begin{tabular}{p{0.15\linewidth}p{0.23\linewidth}p{0.5\linewidth}}
+      \hline
+      \textbf{Classe} & \textbf{Atributo} & \textbf{Descrição}\\
+      \hline
+	Estatística & nome\_estatistica & Nome da estatística\\
+		    & tipo\_estatistica & Indica o tipo da estatística\\
+		    & valor\_estatistica & Identifica o valor da estatística\\
+		    & desvio\_padrao & Indica o desvio padrão da estatística calculada\\
+		    & data\_calculo & Indica a data em que foi calculada aquela estatística\\
+      \hline
+    \end{tabular}
+    \caption{Atributos da classe Estatística}
+    \label{tab:attr_estatistica}
+    \end{table*}    
+
+% Classe Causa    
+\subsubsection{\textbf{Causa}}
+
+  A classe Causa representa as possíveis causas de uma acidente. Para trabalhos futuros, pretende-se especializar esta classe 
+  nas diferentes causas de acidentes existentes ou, se possível, utilizar uma ontologia de causas de acidentes.
+  
+    \begin{table*}[!h]
+    \centering
+    \begin{tabular}{p{0.15\linewidth}p{0.23\linewidth}p{0.5\linewidth}}
+      \hline
+      \textbf{Classe} & \textbf{Atributo} & \textbf{Descrição}\\
+      \hline
+	Causa & descricao\_causa & Descrição da causa do acidente\\
+	      & tipo\_causa & Indica o tipo da causa de acidente (Ex.: Falha técnica, condição da pista, etc.)\\
+	      & periculosidade & Identifica o grau de periculosidade da causa\\
+      \hline
+    \end{tabular}
+    \caption{Atributos da classe Causa}
+    \label{tab:attr_causa}
+    \end{table*}      
     
-\vfill    
+% Classe TipoAcidente    
+\subsubsection{\textbf{TipoAcidente}}
+
+  A classe TipoAcidente representa os tipos de acidentes que podem estar relacionados a determinado acidente.
+  
+    \begin{table*}[!h]
+    \centering
+    \begin{tabular}{p{0.15\linewidth}p{0.23\linewidth}p{0.5\linewidth}}
+      \hline
+      \textbf{Classe} & \textbf{Atributo} & \textbf{Descrição}\\
+      \hline
+	TipoAcidente & nome\_tipo & Indica o nome do tipo de acidente\\
+		     & descricao\_tipo & Descrição do tipo de acidente\\
+      \hline
+    \end{tabular}
+    \caption{Atributos da classe TipoAcidente}
+    \label{tab:attr_tipo_acidente}
+    \end{table*}
+    
+% Classe PostosPRF    
+\subsubsection{\textbf{PostoPRF}}
+
+  A classe PostoPRF representa os os postos da PRF que podem estar localizados em uma rodovia.
+  Os postos da PRF localizam-se ao longo das rodovias, o que os classificam como um tipo de local definido na
+  classe Local. Logo, a classe PostoPRF possuem os mesmos atributos da classe Local, como latitude e longitude,
+  e mais os seguintes:
+  
+    \begin{table*}[!h]
+    \centering
+    \begin{tabular}{p{0.15\linewidth}p{0.23\linewidth}p{0.5\linewidth}}
+      \hline
+      \textbf{Classe} & \textbf{Atributo} & \textbf{Descrição}\\
+      \hline
+	PostoPRF & nome\_posto & Indica o nome do posto da PRF (Ex.: 10º posto da Polícia Rodoviária Federal)\\
+		 & encarregado\_posto & Indica o nome do chefe responsável pelo posto da PRF\\
+		 & telefone & Indica o número de telefone do posto da PRF\\
+		 & email & Indica o endereço de \textit{e-mail} do posto da PRF\\
+		 & detalhes\_posto & Informa detalhes sobre o posto da PRF (Ex.: Há local para pouso de aeronaves)\\
+      \hline
+    \end{tabular}
+    \caption{Atributos da classe PostoPRF}
+    \label{tab:attr_postoprf}
+    \end{table*}
+    
+% Classe AssistenciaTecnica    
+\subsubsection{\textbf{AssistenciaTecnica}}
+
+  A classe AssistenciaTecnica representa entidades que possam oferecer algum serviço de assistência aos motoristas, localizadas 
+  ao longo ou nas cidades mais próximas de uma rodovia.
+  
+    \begin{table*}[!h]
+    \centering
+    \begin{tabular}{p{0.15\linewidth}p{0.23\linewidth}p{0.5\linewidth}}
+      \hline
+      \textbf{Classe} & \textbf{Atributo} & \textbf{Descrição}\\
+      \hline
+	PostoPRF & nome\_assistencia & Indica o nome da unidade de assistência técnica\\
+		 & tipo\_assistencia & Indica o tipo de assistência oferecida (Ex.: Borracharia)\\
+		 & endereco & Indica o endereço da unidade de assistência técnica\\
+		 & telefone & Indica o número de telefone da unidade de assistência técnica\\
+      \hline
+    \end{tabular}
+    \caption{Atributos da classe PostoPRF}
+    \label{tab:attr_postoprf}
+    \end{table*}
+    
+% Classe Hospital    
+\subsubsection{\textbf{Hospital}}
+
+  A classe Hospital representa as unidades hospitalares localizadas próxima a uma rodovia. Para trabalhos futuros, pretende-se
+  utilizar uma ontologia para a definição de hospitais.
+  
+    \begin{table*}[!h]
+    \centering
+    \begin{tabular}{p{0.15\linewidth}p{0.23\linewidth}p{0.5\linewidth}}
+      \hline
+      \textbf{Classe} & \textbf{Atributo} & \textbf{Descrição}\\
+      \hline
+	Hospital & nome\_hospital & Indica o nome do hospital\\
+		 & especialidade & Indica qual a especialidade do hospital\\
+		 & endereco & Indica o endereço do hospital\\
+		 & telefone & Indica o número de telefone do hospital\\
+      \hline
+    \end{tabular}
+    \caption{Atributos da classe Hospital}
+    \label{tab:attr_hospital}
+    \end{table*}
+    
+\vfill

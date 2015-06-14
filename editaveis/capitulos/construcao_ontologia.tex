@@ -13,13 +13,17 @@
       
       Para este trabalho, é esperado apenas uma ontologia capaz de oferecer um arcabouço mais semântico para o \textit{software} 
       "Pé na Estrada", de modo a provocar mudanças iniciais significativas no \textit{software}.
-      Para trabalhos futuros, pretende-se utilizar ontologias específicas para as entidades como Pessoa, Veículo e Rodovia, para
-      aumentar a representatividade da ontologia, além de incluir atributos mais específicos para cada classe.
-    
+      Para trabalhos futuros, pretende-se utilizar ontologias específicas para as entidades como Pessoa, Veículo, Rodovia e
+      Hospital para aumentar a representatividade da ontologia, 
+      além de incluir atributos mais específicos para cada classe.
+  
+  \vfill
+  \pagebreak
   \section{Ontologias encontradas}
    
       \input{editaveis/capitulos/ontologias_acidentes}
       
+  \vfill
   \pagebreak
   \section{Estrutura da ontologia}
 
@@ -38,7 +42,7 @@
       
 	  Como não foi possível encontrar o código OWL das ontologias pesquisadas, a equipe decidiu aproveitar a
 	  modelagem conceitual feita nos trabalhos encontrados. A partir desses modelos, foi construído o modelo 
-	  para a ontologia, ilustrado na figura \ref{fig:modelo_conceitual_ontologia}.
+	  para a ontologia, ilustrado na Figura \ref{fig:modelo_conceitual_ontologia}.
 	  
 	  Após a elaboração do mapa conceitual inicial as propriedades entre as classes foram definidas e as ontologias
 	  encontradas foram utilizadas. 
@@ -46,34 +50,42 @@
 
 	  \begin{table*}[!h]
 	  \centering
-	  \begin{tabular}{p{0.15\linewidth}p{0.15\linewidth}}
+	  \begin{tabular}{p{0.2\linewidth}p{0.20\linewidth}p{0.20\linewidth}}
 	    \hline
-	    \textbf{Classe} & \textbf{Propriedade} \\
+	    \textbf{Classe} & \textbf{Propriedade} & \textbf{Objeto (Classe)}\\
 	    \hline
-	      Acidente & tem\_tipo\\
-		& tem\_causa\\
-		& ocorre\\
-		& esta\_contido\\
+	      Acidente & tem\_tipo & TipoAcidente\\
+		& tem\_causa & Causa\\
+		& ocorre & Local\\
+		& envolve & Veiculo\\
 	    \hline
-	      Veículo & esta\_envolvido\\
-		& tem\_ocupante\\
+	      Veículo & esta\_envolvido & Acidente\\
+		& tem\_ocupante & Ocupante\\
 	    \hline
-	      Ocupante & viaja\_em\\
-		& motorista\\
-		& proprietario\\
+	      Ocupante & viaja\_em & Veiculo\\
+		& motorista & Veiculo\\
+		& proprietario & Veiculo\\
 	    \hline
-	      Local & tem\_acidente\\
-		& tem\_coordenada\\
-		& esta\_contido\\
-		& condicoes\_rodovias\\
+	      Local & tem\_acidente & Acidente\\
+		& esta\_contido & Rodovia\\
 	    \hline
-	      Rodovia & tem\_estatistica\\
-		& contem\\
-		& tem\_postos\_prf\\
-		& tem\_hospital\\
-		& tem\_assistencia\\
+	      Rodovia & tem\_estatistica & Estatistica\\
+		& contem & Local\\
+		& tem\_postos\_prf & PostosPRF\\
+		& tem\_hospital & Hospital\\
+		& tem\_assistencia & AssistenciaTecnica\\
 	    \hline
-	      Estatística & acerca\\
+	      Estatística & acerca & Rodovia\\
+	    \hline
+	      Causa & - & -\\
+	    \hline
+	      TipoAcidente & - & -\\
+	    \hline
+	      PostoPRF & - & -\\
+	    \hline
+	      AssistenciaTecnica & - & -\\
+	    \hline
+	      Hospital & - & -\\
 	    \hline
 	  \end{tabular}
 	  \caption{Classes e Propriedades}
@@ -81,8 +93,10 @@
 	  \end{table*}
 	  
 	  Os relacionamentos entre as classes podem ser vistos melhor no modelo conceitual da ontologia ilustrado na
-	  Figura \ref{fig:modelo_conceitual_ontologia}.\\
+	  Figura \ref{fig:modelo_conceitual_ontologia}.
 	  
+	  \vfill
+	  \pagebreak
 	  \begin{figure}[!htb]
 	    \centering
 	    \includegraphics[scale = 0.23]{modelo_conceitual_ontologia}
@@ -96,19 +110,15 @@
 	  apresentado na Figura \ref{fig:modelo_conceitual_ontologia}.
 
 	  \footnotetext[2]{http://protege.stanford.edu/}
-    
-	\pagebreak
-	\subsubsection{Atributos das classes}
-	
-	    Apesar de não estar descrito no modelo conceitual apresentado, por questão de organização, as classes levantadas
-	    possuem atributos importantes que serão descritos nesse tópico.
-	    
-	    Para a definição dos atributos das classes foram considerados alguns atributos definidos no modelo de dados atual da PRF.\\
-	    
-	    \input{editaveis/capitulos/atributos_classes}
       
+      \vfill
       \pagebreak
-      \subsection{Potencialidades esperadas}
+      \subsection{Atributos das classes}
+	
+	  Apesar de não estar descrito no modelo conceitual apresentado, por questão de organização, as classes levantadas
+	  possuem atributos importantes que serão descritos nesse tópico.
 	  
-	  Para definir o modelo da ontologia foi adotada uma priorização das classes, onde ficou definido que as classes
-	  de maior importância deveriam ser mais facilmente acessíveis no grafo.
+	  Para a definição dos atributos das classes foram considerados alguns atributos definidos no modelo de dados atual
+	  da PRF.
+	  
+	  \input{editaveis/capitulos/atributos_classes}
