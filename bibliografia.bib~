@@ -103,12 +103,6 @@
 
 @misc{ SeveralAuthor:2011,
        author = "D. L. Da Silva, R. R. Souza, M. B. Almeida",
-       title = "Ontologias e vocabulários controlados: comparação de metodologias para construção",
+       title = "Ontologias e vocabulários controlados: comparação de metodologias para constru ",
        year = "2008",
-       note = "Disponível em: <http://www.scielo.br/pdf/ci/v37n3/v37n3a05.pdf>. Acesso em 14 de junho de 2015."}
-
-@misc{ SeveralAuthorUFF:2011,
-       author = "D. L. Da Silva, R. R. Souza, M. B. Almeida",
-       title = "Seminário de Pesquisa em Ontologia no Brasil",
-       year = "2011",
-       note = "Disponível em: <http://www.uff.br/ontologia/artigos/19.pdf>. Acesso em 14 de junho de 2015."}	
+       note = "Disponível em: <http://www.scielo.br/pdf/ci/v37n3/v37n3a05.pdf>. Acesso em 14 de junho de 2015."}	
