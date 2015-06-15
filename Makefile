@@ -6,4 +6,4 @@ all:
 
 clean:
 	@echo Cleaning files...
-	@rm -f requisitos.aux requisitos.idx requisitos.lof requisitos.toc requisitos.log requisitos.lot setup.log
+	@rm -f semantica.aux semantica.idx semantica.lof semantica.toc semantica.log semantica.lot setup.log
