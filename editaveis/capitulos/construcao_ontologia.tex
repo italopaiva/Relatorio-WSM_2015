@@ -32,7 +32,15 @@
   \section{Estrutura da ontologia}
 
       Com a escolha da metodologia 101 a primeira etapa consiste na definição de classes na ontologia.
-      Para essa definição foi realizada uma técnica chamada \textit{CardSorting}. 
+      Para essa definição foi realizada uma técnica chamada \textit{CardSorting}. A Figura \ref{fig:card_sorting} 
+      ilustra os conceitos levantados pela equipe com a técnica \textit{CardSorting}.
+      
+      \begin{figure}[!htb]
+	\centering
+	\includegraphics[scale = 0.1]{card_sorting}
+	\caption[Conceitos levantados com o \textit{CardSorting}]{Conceitos levantados com o \textit{CardSorting}}
+	\label{fig:card_sorting}
+      \end{figure}
       
       Essa técnica consiste na escrita de termos em cartões que representem a interação do usuário com a aplicação,
       quais seriam as perguntas que ele faria ao sistema, o que ele procuraria. Dessa forma, pensando como usuário
@@ -69,6 +77,7 @@
 	      Ocupante & viaja\_em & Veiculo\\
 		& motorista & Veiculo\\
 		& proprietario & Veiculo\\
+		& atendido\_em & Hospital\\
 	    \hline
 	      Local & tem\_acidente & Acidente\\
 		& esta\_contido & Rodovia\\
@@ -103,17 +112,13 @@
 	  \pagebreak
 	  \begin{figure}[!htb]
 	    \centering
-	    \includegraphics[scale = 0.23]{modelo_conceitual_ontologia}
+	    \includegraphics[scale = 0.4]{modelo_conceitual_ontologia}
 	    \caption[Modelo conceitual da ontologia]{Modelo conceitual da ontologia a ser construída}
 	    \label{fig:modelo_conceitual_ontologia}
 	  \end{figure}
 	  
 	  O modelo conceitual apresentado se assemelha bastante com o padrão do grafo final que se obteria com a construção da
 	  ontologia.
-	  Essas classes foram modeladas na ferramenta Protégé \footnotemark[2], de acordo com o modelo conceitual final
-	  apresentado na Figura \ref{fig:modelo_conceitual_ontologia}.
-
-	  \footnotetext[2]{http://protege.stanford.edu/}
       
       \vfill
       \pagebreak
@@ -126,5 +131,30 @@
 	  da PRF.
 	  
 	  \input{editaveis/capitulos/atributos_classes}
-
+      
+      \pagebreak
+      \subsection{Modelagem da ontologia no Protégé}
+      
+	As classes e propriedades definidas foram modeladas na ferramenta Protégé \footnotemark[2],
+	de acordo com o modelo conceitual final	apresentado na Figura \ref{fig:modelo_conceitual_ontologia}.
+	\footnotetext[2]{http://protege.stanford.edu/}
+	
+	As Figuras \ref{fig:classes_protege} e \ref{fig:propriedades_protege} apresentam, respectivamente, as classes e
+	as propriedades que foram modeladas no Protégé.
+	
+	\begin{figure}[!htb]
+	  \centering
+	  \includegraphics[scale = 0.55]{classes_wsm}
+	  \caption[Classes modeladas no Protégé]{Classes modeladas no Protégé.}
+	  \label{fig:classes_protege}
+	\end{figure}
+	
+	\begin{figure}[!htb]
+	  \centering
+	  \includegraphics[scale = 0.6]{propriedades_classes_wsm}
+	  \caption[Propriedades das classes modeladas no Protégé]{Propriedades das classes modeladas no Protégé.}
+	  \label{fig:propriedades_protege}
+	\end{figure}
+	
+      \pagebreak
       \input{editaveis/capitulos/cronograma_construcao_ontologia}
