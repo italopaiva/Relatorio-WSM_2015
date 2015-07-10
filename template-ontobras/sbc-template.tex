@@ -14,7 +14,7 @@
 \author{Ítalo Paiva Batista\inst{1}, Emilie Trindade de Morais\inst{1}}
 
 \address{Faculdade UnB Gama -- Universidade de Brasília (UnB)\\
-  Área Especial de Indústria Projeção A -- 72444-240 -- Brasília -- DF -- Brazil
+  Área Especial de Indústria Projeção A -- 72444-240 -- Brasília -- DF -- Brasil
   \email{italo.paiva.b@gmail.com, emilie.morais.t@gmail.com}
 }
 
@@ -31,54 +31,104 @@
 \end{resumo}
 
 \section{Introdução}
-
+  
+  
+  %%   Repetir menos a palavra trabalho
+  O presente trabalho está organizado da seguinte maneira: A seção 2 apresenta a metodologia
+  utilizada para a construção da ontologia e execução do trabalho; a seção 3 apresenta os progressos parciais
+  obtidos com a execução do trabalho; e, por fim, na seção 4 são apresentadas as considerações finais sobre o trabalho.
+  %%
+  
 \section{Metodologia}
+\label{metodologia_secao}
 
-O método escolhido para a construção dessa ontologia foi o método \textit{\textbf{Ontology 101}}.
+  O método adotado para a construção dessa ontologia foi o método \textit{\textbf{Ontology 101}}.
 
-De acordo com \cite{breitman05}, o processo de construção de uma ontologia a partir do método 101, resumidamente, 
-envolve as seguintes etapas:
-  \begin{itemize}
-   \item Definição das classes dessa ontologia;
-   \item Disposição das classes em uma hierarquia taxonômica;
-   \item Definição de propriedades e valores para os mesmos;
-   \item Preenchimento dos valores das propriedades para cada instância.
-  \end{itemize}
+  De acordo com \cite{breitman05}, o processo de construção de uma ontologia a partir do método 101, resumidamente, 
+  envolve as seguintes etapas:
+    \begin{itemize}
+    \item Definição das classes dessa ontologia;
+    \item Disposição das classes em uma hierarquia taxonômica;
+    \item Definição de propriedades e valores para os mesmos;
+    \item Preenchimento dos valores das propriedades para cada instância.
+    \end{itemize}
 
-Essas quatro etapas resumem os sete passos que podem ser vistos na Figura \ref{fig:processo_101}.
-\begin{figure}[ht] 
-\centering 
-\includegraphics[width=.9\textwidth]{11.png} 
-\caption[Processo de desenvolvimento de ontologias.]{Processo de desenvolvimento de ontologias. Fonte: \cite{DanielaLucas2008}}
-\label{fig:processo_101}
-\end{figure}
+  Essas quatro etapas resumem os sete passos que podem ser vistos na Figura \ref{fig:processo_101}.
+  \begin{figure}[ht] 
+  \centering 
+  \includegraphics[width=.9\textwidth]{11.png} 
+  \caption[Processo de desenvolvimento de ontologias.]{Processo de desenvolvimento de ontologias. Fonte: \cite{DanielaLucas2008}}
+  \label{fig:processo_101}
+  \end{figure}
 
-Para a consideração do reúso de ontologias existentes foi realizada uma revisão de literatura e busca por
-ontologias e terminologias já existentes relacionadas a acidentes e aos dados das
-ocorrências no World Wide Web Consortium (W3C). O levantamento das ontologias
-foi feito por meio de duas expressões de busca em bases de dados, na
-língua inglesa, para obtenção de um resultado mais abrangente.
+  Para a consideração do reúso de ontologias existentes foi realizada uma revisão de literatura e busca por
+  ontologias e terminologias já existentes relacionadas a acidentes e aos dados das
+  ocorrências no World Wide Web Consortium (W3C). O levantamento das ontologias
+  foi feito por meio de duas expressões de busca em bases de dados, na
+  língua inglesa, para obtenção de um resultado mais abrangente.
 
-\begin{center}
-  Expressão 1: \textit{Car accident ontology}\\
-  Expressão 2: \textit{Traffic accident ontology}
-\end{center}
+  \begin{center}
+    Expressão 1: \textit{Car accident ontology}\\
+    Expressão 2: \textit{Traffic accident ontology}
+  \end{center}
 
 
 \section{Proposta de modelagem conceitual da ontologia}
   
+  Esta seção apresenta os resultados parciais obtidos com o processo de construção da ontologia,
+  seguindo a metodologia apresentada na seção \ref{metodologia_secao}.
+  
   \subsection{Escopo da ontologia}
-  
+    
+      A ontologia proposta neste trabalho será utilizada para o contexto de acidentes envolvendo veículos ocorridos em rodovias
+      federais brasileiras, portanto, alguns conceitos inerentes a outros tipos de acidentes não se aplicam a este 
+      contexto. Por esse motivo, os modelos conceituais das ontologias encontradas foram analisados e utilizados como base 
+      para a construção da ontologia proposta. As ontologias encontradas com a revisão da literatura são apresentadas na
+      subseção \ref{ontologias_encontradas_secao}.
+      
+      Para a composição da ontologia, foram selecionados apenas algumas classes e atributos centrais para poder
+      criar uma versão inicial da ontologia, com base nas ontologias encontradas e no modelo de dados atual
+      do sistema BR-Brasil da PRF, pois tal modelo de dados conta com muitas classes e atributos.
+    
   \subsection{Ontologias encontradas}
+    \label{ontologias_encontradas_secao}
+    
+    Como mencionado, foi feita uma revisão da literatura a procura de ontologias relacionadas a acidentes de carro 
+    por meio de pesquisas em bases de dados com expressões chaves. Foram encontradas duas ontologias bastante semelhantes,
+    no contexto de acidentes de carro, que são empregadas em soluções tecnológicas parecidas.
   
-  \subsection{Definição das classes}
-  
+  \subsection{Levantamento dos termos e definição das classes}
+    
+    
+    
   \subsection{Definição das propriedades}
   
 \section{Considerações finais}
-  \subsection{Propostas futuras}
 
+  Para trabalhos futuros, pretende-se utilizar ontologias específicas para as entidades como Pessoa, Veículo, Rodovia e
+  Hospital para aumentar a representatividade da ontologia, além de incluir atributos mais específicos para cada classe.
+
+  \subsection{Propostas futuras}
+      
+      Os dados fornecidos pela PRF, utilizados pelo sistema BR-Brasil, também servem de insumo para um \textit{software}, ainda 
+      em construção, chamado
+      ``Pé na estrada", que possui a finalidade de apresentar essas informações de forma mais atrativa, visual e significativa ao usuário.
+      Atualmente, a aplicação é limitada às seguintes funcionalidades: buscar informações sobre as rodovias federais brasileiras,
+      visualizando as rodovias com maiores índices de acidentes; traçar rotas para visualizar os trechos mais perigosos
+      e os acidentes ocorridos ao longo da rota; e permite aos usuários fazerem comentários sobre as rodovias.
+      
+      Essa limitação se
+      dá a partir do modelo de dados utilizado atualmente pela PRF, que consiste em uma estrutura relacional bastante complexa 
+      e inconsistente, pois os relacionamentos entre os dados são feitos por meio de uma grande quantidade de tabelas relacionadas
+      que limitam a representatividade semântica dos dados, o que dificultaria a apresentação desses dados na aplicação,
+      tornando o sistema lento e demasiado complexo de se manter.
+      
+      Com este trabalho, espera-se que a ontologia criada seja capaz de oferecer um arcabouço mais semântico para o \textit{software} 
+      ``Pé na estrada", fornecendo um modelo de dados estruturado semanticamente que permita que as funcionalidades
+      da aplicação evoluam, de modo a melhorar a apresentação e qualidade dos dados sobre os acidentes nas rodovias.
+      
 % Figure example
+
 % \begin{figure}[ht]
 % \centering
 % \includegraphics[width=.3\textwidth]{fig2.jpg}
