@@ -1,5 +1,9 @@
 \documentclass[12pt]{article}
 
+\usepackage{longtable}
+
+\usepackage[brazilian]{babel}
+
 \usepackage{sbc-template}
 
 \usepackage{graphicx,url}
@@ -7,14 +11,16 @@
 % \usepackage[brazil]{babel}
 \usepackage[latin1]{inputenc}
 
+
 \sloppy
 
-\title{Proposta de utilização de dados semanticamente estruturados no \textit{software} ``Pé na estrada"}
+\title{Uma proposta de ontologia para acidentes em rodovias federais brasileiras}
+% \title{Proposta de utilização de dados semanticamente estruturados no \textit{software} ``Pé na estrada"}
 
 \author{Ítalo Paiva Batista\inst{1}, Emilie Trindade de Morais\inst{1}}
 
 \address{Faculdade UnB Gama -- Universidade de Brasília (UnB)\\
-  Área Especial de Indústria Projeção A -- 72444-240 -- Brasília -- DF -- Brasil
+  Área Especial de Indústria, Projeção A -- 72444-240 -- Brasília -- DF -- Brasil
   \email{italo.paiva.b@gmail.com, emilie.morais.t@gmail.com}
 }
 
@@ -34,11 +40,14 @@
   
   
   %%   Repetir menos a palavra trabalho
-  O presente trabalho está organizado da seguinte maneira: A seção 2 apresenta a metodologia
-  utilizada para a construção da ontologia e execução do trabalho; a seção 3 apresenta os progressos parciais
-  obtidos com a execução do trabalho; e, por fim, na seção 4 são apresentadas as considerações finais sobre o trabalho.
+  O presente trabalho está organizado da seguinte maneira: A seção \ref{metodologia_secao} apresenta a metodologia
+  utilizada para o processo de construção da ontologia; a seção \ref{ontologia_secao} apresenta os progressos parciais
+  obtidos com a execução do processo de construção da ontologia; e, por fim, na seção \ref{consideracoes_secao}
+  são apresentadas as considerações finais sobre o trabalho.
   %%
-  
+
+\vfill
+\pagebreak
 \section{Metodologia}
 \label{metodologia_secao}
 
@@ -74,6 +83,7 @@
 
 
 \section{Proposta de modelagem conceitual da ontologia}
+  \label{ontologia_secao}
   
   Esta seção apresenta os resultados parciais obtidos com o processo de construção da ontologia,
   seguindo a metodologia apresentada na seção \ref{metodologia_secao}.
@@ -82,9 +92,10 @@
     
       A ontologia proposta neste trabalho será utilizada para o domínio de acidentes envolvendo veículos ocorridos apenas em rodovias
       federais brasileiras, portanto, alguns conceitos inerentes a outros tipos de acidentes não se aplicam a este 
-      contexto. Por esse motivo, os modelos conceituais das ontologias encontradas foram analisados e utilizados apenas como base 
-      para a construção da ontologia proposta. As ontologias encontradas com a revisão da literatura são apresentadas na
-      subseção \ref{ontologias_encontradas_secao}.
+      contexto. 
+%       Por esse motivo, os modelos conceituais das ontologias encontradas foram analisados e utilizados apenas como base 
+%       para a construção da ontologia proposta. As ontologias encontradas com a revisão da literatura são apresentadas na
+%       subseção \ref{ontologias_encontradas_secao}.
       
       Para a composição da ontologia, foram selecionados apenas algumas classes e atributos centrais para poder
       criar uma versão inicial da ontologia, com base nas ontologias encontradas e no modelo de dados atual
@@ -100,10 +111,11 @@
     
     Resumidamente, a aplicação dessas ontologias consiste na organização das informações de acidentes em estradas,
     para que as informações de um acidente de trânsito sejam devidamente transmitidas em redes veiculares 
-    \textit{Ad hoc}, ou VANETs \cite{caova}. Essas redes usam os carros como nós de
-    uma rede para trafegar informações, que podem ser analisados e registrados em um banco de
-    dados \cite{veacon}. Na aplicação dos projetos encontrados, elas também tem a utilidade de alertar ambulâncias
-    ou hospitais próximos que possam prestar socorro de forma rápida e eficiente.
+    \textit{Ad hoc}, ou VANETs \cite{caova}.
+%     Essas redes usam os carros como nós de
+%     uma rede para trafegar informações, que podem ser analisados e registrados em um banco de
+%     dados \cite{veacon}. Na aplicação dos projetos encontrados, elas também tem a utilidade de alertar ambulâncias
+%     ou hospitais próximos que possam prestar socorro de forma rápida e eficiente.
     
     Os modelos conceituais das ontologias CAOVA e VEACON podem ser vistos nas figuras 
     \ref{fig:caova} e \ref{fig:veacon}, respectivamente.
@@ -129,28 +141,138 @@
     
 %   \vfill
 %   \pagebreak
-  \subsection{Levantamento dos termos e definição das classes}
-      
-    \begin{figure}[!ht]
-    \centering
-    \includegraphics[width=.99\textwidth]{modelo_conceitual.png}
-    \caption{Modelo conceitual da ontologia proposta.}
-    \label{fig:modelo_conceitual}
-    \end{figure}
-      
-  \subsection{Definição das propriedades}
+  \subsection{Levantamento dos termos, classes e propriedades}
+    
+    Para levantar os termos inerentes ao contexto foi utilizada a técnica de \textit{CardSorting}.
+    Essa técnica consiste na escrita de termos em cartões que representem: a interação do usuário com a aplicação,
+    quais seriam as perguntas que ele faria ao sistema e o que ele procuraria.
+    
+    A partir do levantamento dos principais termos, foi realizado um mapa conceitual
+    inicial com o intuito de organizar os termos em classes em uma hierarquia e para identificar seus
+    relacionamentos. Na tabela \ref{tab:classes} está a lista de classes identificadas e as propriedades que elas possuem.
 
-\vfill
-\pagebreak
+% 	  \begin{table*}[!h]
+% 	  \centering
+	  \begin{longtable}{p{0.2\linewidth}p{0.20\linewidth}p{0.20\linewidth}p{0.20\linewidth}}
+	    \hline
+	    \textbf{Domínio} & \textbf{Propriedade} & \textbf{Escopo (\textit{range})} & \textbf{Cardinalidade}\\
+	    \hline
+	      Acidente & tem\_tipo & TipoAcidente & 1:1\\
+		& tem\_causa & Causa & 1:N\\
+		& ocorre & Local & 1:1\\
+		& envolve & Veiculo & 1:N\\
+	    \hline
+	      Veículo & esta\_envolvido & Acidente & 1:1\\
+		& tem\_ocupante & Ocupante & 1:N\\
+	    \hline
+	      Ocupante & viaja\_em & Veiculo & 1:1\\
+		& motorista & Veiculo & 1:1\\
+		& proprietario & Veiculo & 0..1 : 1\\
+		& atendido\_em & Hospital & 1:1\\
+	    \hline
+	      Local & tem\_acidente & Acidente & 1:N\\
+		& esta\_contido & Rodovia & 1:1\\
+	    \hline
+	      Rodovia & tem\_estatistica & Estatistica & 1:N\\
+		& contem & Local & 1:N\\
+		& tem\_postos\_prf & PostosPRF & 1:N\\
+		& tem\_hospital & Hospital & 1:N\\
+		& tem\_assistencia & AssistenciaTecnica 1:N\\
+	    \hline
+	      Estatística & acerca & Rodovia & 1:1\\
+	    \hline
+	      Causa & - & - & -\\
+	    \hline
+	      TipoAcidente & - & - & -\\
+	    \hline
+	      PostoPRF & - & - & -\\
+	    \hline
+	      AssistenciaTecnica & - & - & -\\
+	    \hline
+	      Hospital & - & - & -\\
+	    \hline\\
+% 	  \end{tabular}
+	  \caption{Classes e propriedades da ontologia proposta.}
+	  \label{tab:classes}
+	  \end{longtable}
+	  
+	  Os relacionamentos entre as classes podem ser vistos melhor no modelo conceitual da ontologia ilustrado na
+	  Figura \ref{fig:modelo_conceitual}.
+	  
+	  \vfill
+	  \pagebreak
+	  \begin{figure}[!ht]
+	  \centering
+	  \includegraphics[width=.9\textwidth]{modelo_conceitual.png}
+	  \caption{Modelo conceitual da ontologia proposta.}
+	  \label{fig:modelo_conceitual}
+	  \end{figure}
+	  
+	  Todo acidente possui um tipo e uma causa, e envolve veículos, que por sua vez contém ocupantes.
+	  No contexto de acidentes em rodovias, todo acidente ocorre em algum local de uma rodovia. As rodovias, possuem
+	  estatísticas sobre os acidentes associadas a elas. Próximo às rodovias podem existir hospitais, postos
+	  de assistência técnica e postos da PRF. Foi feita uma análise da lista de postos e delegacias da PRF onde
+	  se constatou que todos os postos da PRF se encontram em algum local de um rodovia, o que justifica a especialização
+	  da classe PostoPRF a partir da classe Local.
+	  
+	  Para a definição dos atributos das classes, utilizou-se como base as ontologias encontradas e o modelo de dados
+	  atual do sistema BR-Brasil fornecido pela PRF. Por se tratar de uma lista um pouco extensa, não serão discutidos aqui os 
+	  atributos de cada classe.
+	  
+	  Todas as classes apresentadas foram modeladas no \textit{software} Protégé, versão 3.1.1,
+	  de acordo com o modelo conceitual apresentado na figura \ref{fig:modelo_conceitual}.
+	  
+%   \subsection{Definição dos atributos das classes}
+% 
+% %     \begin{table*}[!h]
+% %     \centering
+%     \begin{longtable}{p{0.2\linewidth}p{0.6\linewidth}}
+%       \hline
+%       \textbf{Classe} & \textbf{Atributos}\\
+%       \hline
+% 	Acidente & data\_acidente, hora\_acidente, danos\_causados. \\
+%       \hline
+% 	Veiculo & tipo\_veiculo, modelo\_veiculo, ano\_veiculo, km\_veiculo, defeitos\_veiculo, quantidade\_pessoas.\\
+%       \hline
+% 	Ocupante & sexo, idade\_pessoa, usava\_cinto, estado\_mental, sob\_efeito\_toxicos, uf\_cnh\_motorista.\\
+%       \hline
+% 	Local & latitude, longitude, km\_rodovia, ponto\_referencia, regiao\_urbana, volume\_trafego.\\
+%       \hline
+% 	Rodovia & nome\_rodovia, extensao\_rodovia, estado\_rodovia, posto\_prf.\\
+%       \hline
+% 	Estatística & nome\_estatistica, tipo\_estatistica, valor\_estatistica, data\_calculo.\\
+%       \hline
+% 	Causa & descricao\_causa, tipo\_causa, periculosidade.\\
+%       \hline
+% 	TipoAcidente & nome\_tipo, descricao\_tipo.\\
+%       \hline
+% 	PostoPRF & nome\_posto, encarregado\_posto, telefone, email, detalhes\_posto.\\
+%       \hline
+% 	AssistenciaTecnica & nome\_assistencia, tipo\_assistencia, endereco, telefone.\\
+%       \hline
+% 	Hospital & nome\_hospital, especialidade, endereco, telefone.\\
+%       \hline
+% %     \end{tabular}
+%     \caption{Atributos das classes da ontologia.}
+%     \label{tab:attr_acidente}
+%     \end{longtable}
+   
 \section{Considerações finais}
+  \label{consideracoes_secao}
+  
+  O presente trabalho apresentou os resultados do progresso parcial do processo de criação de uma ontologia para acidentes 
+  em rodovias federais. Seguindo a metodologia adotada, a próxima etapa seria a criação de instâncias das classes definidas na
+  ontologia, onde tais instâncias seriam feitas com base nos dados sobre os acidentes fornecidos pela PRF, para a posterior validação 
+  da ontologia.
+  
+  Para trabalhos futuros, pretende-se pesquisar e utilizar ontologias específicas para as entidades como Pessoa (Ocupante),
+  Veículo, Rodovia e Hospital para aumentar a representatividade da ontologia. Além disto, pretende-se incluir atributos mais específicos
+  para cada classe, de modo a conseguir abrangir, com a ontologia, todos os dados necessários à PRF, fornecendo-lhes um modelo de dados 
+  estruturado semanticamente.
 
-  Para trabalhos futuros, pretende-se utilizar ontologias específicas para as entidades como Pessoa, Veículo, Rodovia e
-  Hospital para aumentar a representatividade da ontologia, além de incluir atributos mais específicos para cada classe,
-  de modo a conseguir abrangir, com a ontologia, todos os dados necessários fornecidos pela PRF no seu modelo de dados atual.
-
-  \subsection{Propostas futuras}
+  \subsection{Proposta futura de utilização da ontologia}
       
-      Os dados fornecidos pela PRF, utilizados pelo sistema BR-Brasil, também servem de insumo para um \textit{software}, ainda 
+      Os dados sobre os acidentes fornecidos pela PRF, utilizados pelo sistema BR-Brasil, também servem de insumo para um \textit{software}, ainda 
       em construção, chamado ``Pé na estrada", que possui a finalidade de apresentar essas informações de forma mais atrativa, visual e significativa ao usuário.
       Atualmente, a aplicação é limitada às seguintes funcionalidades: buscar informações sobre as rodovias federais brasileiras,
       visualizando as rodovias com maiores índices de acidentes; traçar rotas para visualizar os trechos mais perigosos
