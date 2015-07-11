@@ -51,30 +51,29 @@
 \section{Introdução}
   
   Com a Lei de acesso à informação (LEI 12.527/2011) \cite{brasil11}, que garante
-aos cidadãos o acesso a informações acerca dos órgãos públicos integrantes da
-administração direta, a Polícia Rodoviária Federal (PRF) passou a disponibilizar dados
-relacionados às ocorrências dos acidentes em rodovias federais. Todavia, são apenas
-dados disponibilizados em planilhas. Desse modo, não sendo possível fazer interpretações
-desses dados de forma fácil, eficiente e eficaz.
+  aos cidadãos o acesso a informações acerca dos órgãos públicos integrantes da
+  administração direta, a Polícia Rodoviária Federal (PRF) passou a disponibilizar dados
+  relacionados às ocorrências dos acidentes em rodovias federais. Todavia, são apenas
+  dados disponibilizados em planilhas. Desse modo, não sendo possível fazer interpretações
+  desses dados de forma fácil, eficiente e eficaz.
 
-      Os dados sobre os acidentes fornecidos pela PRF, utilizados pelo sistema BR-Brasil, também servem de insumo para um \textit{software}, ainda 
-      em construção, chamado ``Pé na estrada", que possui a finalidade de apresentar essas informações de forma mais atrativa, visual e significativa ao usuário.
-      Atualmente, a aplicação é limitada às seguintes funcionalidades: buscar informações sobre as rodovias federais brasileiras,
-      visualizando as rodovias com maiores índices de acidentes; traçar rotas para visualizar os trechos mais perigosos
-      e os acidentes ocorridos ao longo da rota; e permite aos usuários fazerem comentários sobre as rodovias.
-      
-      Essa limitação é dada a partir do modelo de dados utilizado atualmente pela PRF, que consiste em uma estrutura relacional bastante complexa 
-      e inconsistente, pois os relacionamentos entre os dados são feitos por meio de uma grande quantidade de tabelas relacionadas
-      que limitam a representatividade semântica dos dados. Dessa forma, este trabalho visa construir uma ontologia de acidentes de trânsito baseada em ontologias já existentes para
-possibilitar  uma melhor representação dos dados disponibilizados pela PRF através da aplicação ``Pé na estrada".
+  Os dados sobre os acidentes fornecidos pela PRF, utilizados pelo sistema BR-Brasil, também servem de insumo para um \textit{software}, ainda 
+  em construção, chamado ``Pé na estrada", que possui a finalidade de apresentar essas informações de forma mais atrativa, visual e significativa ao usuário.
+  Atualmente, a aplicação é limitada às seguintes funcionalidades: buscar informações sobre as rodovias federais brasileiras,
+  visualizando as rodovias com maiores índices de acidentes; traçar rotas para visualizar os trechos mais perigosos
+  e os acidentes ocorridos ao longo da rota; e permite aos usuários fazerem comentários sobre as rodovias.
   
-  %%   Repetir menos a palavra trabalho
+  Essa limitação é dada a partir do modelo de dados utilizado atualmente pela PRF, que consiste em uma estrutura relacional bastante complexa 
+  e inconsistente, pois os relacionamentos entre os dados são feitos por meio de uma grande quantidade de tabelas relacionadas
+  que limitam a representatividade semântica dos dados. Dessa forma, este trabalho visa construir uma ontologia de acidentes de trânsito
+  em rodovias federais baseada em ontologias já existentes, para
+  possibilitar uma melhor representação dos dados disponibilizados pela PRF através da aplicação ``Pé na estrada".
+  
   Este trabalho está organizado em três seções: A seção \ref{metodologia_secao} apresenta a metodologia
   utilizada para o processo de construção da ontologia; a seção \ref{ontologia_secao} apresenta os progressos parciais
   obtidos com a execução do processo de construção da ontologia; e, por fim, na seção \ref{consideracoes_secao}
   são apresentadas as considerações finais e proposta de trabalhos futuros.
-  %%
-
+  
 \section{Metodologia}
 \label{metodologia_secao}
 
@@ -95,7 +94,7 @@ possibilitar  uma melhor representação dos dados disponibilizados pela PRF atrav
   \begin{figure}[ht] 
   \centering 
   \includegraphics[width=.9\textwidth]{11.png} 
-  \caption[Processo de desenvolvimento de ontologias.]{Processo de desenvolvimento de ontologias. Fonte: \cite{DanielaLucas2008}}
+  \caption[Processo de desenvolvimento de ontologias.]{Processo de desenvolvimento de ontologias. Fonte: \cite{DanielaLucas2008}.}
   \label{fig:processo_101}
   \end{figure}
 
@@ -122,30 +121,21 @@ possibilitar  uma melhor representação dos dados disponibilizados pela PRF atrav
     \label{ontologias_encontradas_secao}
     
     Como mencionado, foi feita uma revisão da literatura a procura de ontologias relacionadas a acidentes de carro 
-    por meio de pesquisas em bases de dados com expressões chaves, em inglês para obtenção de um resultado mais abrangente.
-    
-  \begin{center}
-    Expressão 1: \textit{Car accident ontology}\\
-    Expressão 2: \textit{Traffic accident ontology}
-  \end{center}
-  
+    por meio de pesquisas em bases de dados com as expressões chaves ``\textit{Car accident ontology}" e
+    ``\textit{Traffic accident ontology}".
+      
     Foram encontradas duas ontologias bastante semelhantes, no contexto de acidentes de carro, que são empregadas em soluções tecnológicas parecidas, a 
     \textit{Car Accident Ontology for VANETs} (CAOVA) \cite{caova} e a \textit{Vehicular Accident Ontology} (VEACON) \cite{veacon}.
     
     Resumidamente, a aplicação dessas ontologias consiste na organização das informações de acidentes em estradas,
     para que as informações de um acidente de trânsito sejam devidamente transmitidas em redes veiculares 
     \textit{Ad hoc}, ou VANETs \cite{caova}.
-%     Essas redes usam os carros como nós de
-%     uma rede para trafegar informações, que podem ser analisados e registrados em um banco de
-%     dados \cite{veacon}. Na aplicação dos projetos encontrados, elas também tem a utilidade de alertar ambulâncias
-%     ou hospitais próximos que possam prestar socorro de forma rápida e eficiente.
-    
     Os modelos conceituais das ontologias CAOVA e VEACON podem ser vistos nas figuras 
     \ref{fig:caova} e \ref{fig:veacon}, respectivamente.
     
     \begin{figure}[!ht]
     \centering
-    \includegraphics[width=.48\textwidth]{caova.png}
+    \includegraphics[width=.6\textwidth]{caova.png}
     \caption{Componentes da ontologia CAOVA. Fonte: \cite{caova}.}
     \label{fig:caova}
     \end{figure}
@@ -162,8 +152,6 @@ possibilitar  uma melhor representação dos dados disponibilizados pela PRF atrav
     A partir dos modelos das ontologias encontradas, juntamente com as informações do modelo de dados atual fornecido pela PRF, 
     foi construído o modelo para a ontologia proposta, ilustrado na figura \ref{fig:modelo_conceitual}.
     
-%   \vfill
-%   \pagebreak
   \subsection{Levantamento dos termos, classes e propriedades}
     
     Para levantar os termos inerentes ao contexto foi utilizada a técnica de \textit{CardSorting}.
@@ -222,11 +210,11 @@ possibilitar  uma melhor representação dos dados disponibilizados pela PRF atrav
 	  Os relacionamentos entre as classes podem ser vistos melhor no modelo conceitual da ontologia ilustrado na
 	  Figura \ref{fig:modelo_conceitual}.
 	  
-	  \vfill
-	  \pagebreak
+% 	  \vfill
+% 	  \pagebreak
 	  \begin{figure}[!ht]
 	  \centering
-	  \includegraphics[width=.9\textwidth]{modelo_conceitual.png}
+	  \includegraphics[width=.99\textwidth]{modelo_conceitual.png}
 	  \caption{Modelo conceitual da ontologia proposta.}
 	  \label{fig:modelo_conceitual}
 	  \end{figure}
