@@ -17,11 +17,11 @@
 \title{Uma Proposta de Ontologia para Acidentes em Rodovias Federais Brasileiras}
 % \title{Proposta de utilização de dados semanticamente estruturados no \textit{software} ``Pé na estrada"}
 
-\author{Ítalo Paiva Batista\inst{1}, Emilie Trindade de Morais\inst{1}}
+\author{Ítalo Paiva Batista\inst{1}, Emilie Trindade de Morais\inst{1}, Fillipe Oliveira Feitosa\inst{1}}
 
 \address{Faculdade UnB Gama -- Universidade de Brasília (UnB)\\
   Área Especial de Indústria, Projeção A -- 72444-240 -- Brasília -- DF -- Brasil
-  \email{italo.paiva.b@gmail.com, emilie.morais.t@gmail.com}
+  \email{italo.paiva.b@gmail.com, emilie.morais.t@gmail.com, fillipefeitosa@gmail.com}
 }
 
 \begin{document} 
@@ -157,12 +157,12 @@
   \subsection{Levantamento dos termos, classes e propriedades}
     
     Para levantar os termos inerentes ao contexto foi utilizada a técnica de \textit{CardSorting}.
-    Essa técnica consiste na escrita de termos em cartões \cite{hudson}. Esses termos para a ontologia representam: a interação do usuário com a 
-    aplicação,    quais seriam as perguntas que ele faria ao sistema e o que ele procuraria.
+    Essa técnica consiste na escrita de termos relacionados em cartões \cite{hudson}. Esses termos para a ontologia representam: a interação do usuário com a 
+    aplicação, quais seriam as perguntas que ele faria ao sistema e o que ele procuraria.
     
     A partir do levantamento dos principais termos, foi realizado um mapa conceitual
-    inicial com o intuito de organizar os termos em classes em uma hierarquia e para identificar seus
-    relacionamentos. Na tabela \ref{tab:classes} está a lista de classes identificadas e as propriedades que elas possuem.
+    para organizar estes termos em classes ordenados em uma hierarquia, de forma que 
+    fosse possível identificar seus relacionamentos. Na tabela \ref{tab:classes} está a lista de classes identificadas e as propriedades que elas possuem.
 
 % 	  \begin{table*}[!h]
 % 	  \centering
@@ -209,7 +209,7 @@
 	  \label{tab:classes}
 	  \end{longtable}
 	  
-	  Os relacionamentos entre as classes podem ser vistos melhor no modelo conceitual da ontologia ilustrado na
+	  Os relacionamentos entre as classes podem ser melhor compreendidos no modelo conceitual da ontologia ilustrado na
 	  Figura \ref{fig:modelo_conceitual}.
 	  
 % 	  \vfill
@@ -221,7 +221,7 @@
 	  \label{fig:modelo_conceitual}
 	  \end{figure}
 	  
-	  Todo acidente possui um tipo e uma causa, e envolve veículos, que por sua vez contém ocupantes.
+	  Todo acidente possui um tipo e uma causa, e envolve veículos que por sua vez contém ocupantes.
 	  No contexto de acidentes em rodovias, todo acidente ocorre em algum local de uma rodovia. As rodovias, possuem
 	  estatísticas sobre os acidentes associadas a elas. Próximo às rodovias podem existir hospitais, postos
 	  de assistência técnica e postos da PRF. Foi feita uma análise da lista de postos e delegacias da PRF onde
