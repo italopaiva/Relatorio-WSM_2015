@@ -17,11 +17,11 @@
 \title{Uma Proposta de Ontologia para Acidentes em Rodovias Federais Brasileiras}
 % \title{Proposta de utilização de dados semanticamente estruturados no \textit{software} ``Pé na estrada"}
 
-\author{Ítalo Paiva Batista\inst{1}, Emilie Trindade de Morais\inst{1}, Fillipe Oliveira Feitosa\inst{1}}
+\author{Emilie Trindade de Morais\inst{1}, Fillipe Oliveira Feitosa\inst{1}, Ítalo Paiva Batista\inst{1}}
 
 \address{Faculdade UnB Gama -- Universidade de Brasília (UnB)\\
-  Área Especial de Indústria, Projeção A -- 72444-240 -- Brasília -- DF -- Brasil
-  \email{italo.paiva.b@gmail.com, emilie.morais.t@gmail.com, fillipefeitosa@gmail.com}
+  Área Especial de Indústria, Projeção A -- 72444-240 -- Brasília -- DF -- Brasil  
+  \email{\{emilie.morais.t, fillipefeitosa, italo.paiva.b\}@gmail.com}
 }
 
 \begin{document} 
@@ -32,7 +32,7 @@
   
   The brazilian federal highway police (Polícia Rodoviária Federal, in portuguese) have provided data about the accidents in the
   brazilian federal highways. These data are not provided in a clear and atractive way, and for that, a software is being developed
-  as a proposal of a better presentation and use of these informations. Therefore, this work had as objective build an accident
+  as a proposal of a better presentation and use of these informations. Therefore, this work had as objective build an highway accident
   ontology for use in the software. The ontology construction followed the methodology 101. As an ongoing work, we obtained as partial 
   result the initial conceptual modeling of the ontology which will be used in the software.
   
@@ -43,7 +43,7 @@
   A Polícia Rodoviária Federal (PRF) tem disponibilizado dados acerca dos acidentes ocorridos em rodovias federais.
   Esses dados não estão disponibilizados de forma clara e atrativa, para isso um \textit{software} está sendo desenvolvido como
   proposta de uma melhor apresentação e utilização das informações. Assim, este trabalho teve como objetivo construir uma ontologia de 
-  acidentes para utilização no \textit{software}. A construção da ontologia seguiu a metodologia 101. Como trabalho em andamento, 
+  acidentes em rodovias para utilização no \textit{software}. A construção da ontologia seguiu a metodologia 101. Como trabalho em andamento, 
   obteve-se como resultado parcial a modelagem conceitual inicial da ontologia que posteriormente deve ser utilizada no \textit{software}.
   
 \end{resumo}
@@ -137,14 +137,14 @@
     
     \begin{figure}[!ht]
     \centering
-    \includegraphics[width=.6\textwidth]{caova.png}
+    \includegraphics[width=.47\textwidth]{caova.png}
     \caption{Componentes da ontologia CAOVA. Fonte: \cite{caova}.}
     \label{fig:caova}
     \end{figure}
     
     \begin{figure}[!ht]
     \centering
-    \includegraphics[width=.55\textwidth]{veacon.png}
+    \includegraphics[width=.47\textwidth]{veacon.png}
     \caption{Componentes da ontologia VEACON. Fonte: \cite{veacon}.}
     \label{fig:veacon}
     \end{figure}
@@ -232,6 +232,9 @@
 	  atual do sistema BR-Brasil fornecido pela PRF. Por se tratar de uma lista um pouco extensa, não serão discutidos aqui os 
 	  atributos de cada classe.
 	  
+	  Todas as classes apresentadas foram modeladas no \textit{software} Protégé (http://protege.stanford.edu/), versão 4.2,
+	  de acordo com o modelo conceitual apresentado na figura \ref{fig:modelo_conceitual}.
+	  
 %   \subsection{Definição dos atributos das classes}
 % 
 % %     \begin{table*}[!h]
@@ -280,11 +283,9 @@
   para cada classe, de modo a conseguir abrangir, com a ontologia, todos os dados necessários à PRF, fornecendo-lhes um modelo de dados 
   estruturado semanticamente.
      
-
-      
-      Com este trabalho, espera-se que a ontologia criada seja capaz de oferecer um arcabouço mais semântico para o \textit{software} 
-      ``Pé na estrada", fornecendo um modelo de dados estruturado semanticamente que permita que as funcionalidades
-      da aplicação evoluam, de modo a melhorar a apresentação e qualidade dos dados sobre os acidentes nas rodovias.
+  Com este trabalho, espera-se que a ontologia criada seja capaz de oferecer um arcabouço mais semântico para o \textit{software} 
+  ``Pé na estrada", fornecendo um modelo de dados estruturado semanticamente que permita que as funcionalidades
+  da aplicação evoluam, de modo a melhorar a apresentação e qualidade dos dados sobre os acidentes nas rodovias.
       
 % Figure example
 
