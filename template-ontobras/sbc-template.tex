@@ -17,11 +17,11 @@
 \title{Uma Proposta de Ontologia para Acidentes em Rodovias Federais Brasileiras}
 % \title{Proposta de utilização de dados semanticamente estruturados no \textit{software} ``Pé na estrada"}
 
-\author{Ítalo Paiva Batista\inst{1}, Emilie Trindade de Morais\inst{1}}
+\author{Emilie Trindade de Morais\inst{1}, Fillipe Oliveira Feitosa\inst{1}, Ítalo Paiva Batista\inst{1}}
 
 \address{Faculdade UnB Gama -- Universidade de Brasília (UnB)\\
-  Área Especial de Indústria, Projeção A -- 72444-240 -- Brasília -- DF -- Brasil
-  \email{\{italo.paiva.b, emilie.morais.t\}@gmail.com}
+  Área Especial de Indústria, Projeção A -- 72444-240 -- Brasília -- DF -- Brasil  
+  \email{\{emilie.morais.t, fillipefeitosa, italo.paiva.b\}@gmail.com}
 }
 
 \begin{document} 
@@ -53,12 +53,14 @@
   Com a Lei de acesso à informação (LEI 12.527/2011) \cite{brasil11}, que garante
   aos cidadãos o acesso a informações acerca dos órgãos públicos integrantes da
   administração direta, a Polícia Rodoviária Federal (PRF) passou a disponibilizar dados
-  relacionados às ocorrências dos acidentes em rodovias federais. Todavia, são apenas
-  dados disponibilizados em planilhas. Desse modo, não sendo possível fazer interpretações
-  desses dados de forma fácil, eficiente e eficaz.
-
-  Os dados sobre os acidentes fornecidos pela PRF, utilizados pelo sistema BR-Brasil, também servem de insumo para um \textit{software}, ainda 
-  em construção, chamado ``Pé na estrada", que possui a finalidade de apresentar essas informações de forma mais atrativa, visual e significativa ao usuário.
+  relacionados às ocorrências dos acidentes em rodovias federais. Entretanto, a lei não 
+  diz nada a respeito da forma de disponibilização desses dados, muito menos sobre 
+  a tecnologia ou padrão de acesso aos dados. Esses dados da PRF, por exemplo,
+  são disponibilizados em planilhas eletrônicas. Considerando a quantidade de dados e a falta de padrão
+  dessas planilhas, é possível pontuar a complexidade envolvida no processo de tranformar
+  esses dados em informações de fácil acesso.
+  
+  Os dados extraídas das planilhas da PRF, utilizados pelo sistema BR-Brasil, também servem de insumo para um \textit{software} em desenvolvimento chamado "Pé na estrada", que possui a finalidade de apresentar essas informações de forma mais atrativa, visual e significativa ao usuário.
   Atualmente, a aplicação é limitada às seguintes funcionalidades: buscar informações sobre as rodovias federais brasileiras,
   visualizando as rodovias com maiores índices de acidentes; traçar rotas para visualizar os trechos mais perigosos
   e os acidentes ocorridos ao longo da rota; e permite aos usuários fazerem comentários sobre as rodovias.
@@ -67,7 +69,7 @@
   e inconsistente, pois os relacionamentos entre os dados são feitos por meio de uma grande quantidade de tabelas relacionadas
   que limitam a representatividade semântica dos dados. Dessa forma, este trabalho visa construir uma ontologia de acidentes de trânsito
   em rodovias federais baseada em ontologias já existentes, para
-  possibilitar uma melhor representação dos dados disponibilizados pela PRF através da aplicação ``Pé na estrada".
+  possibilitar uma melhor representação dos dados disponibilizados pela PRF através da aplicação "Pé na estrada".
   
   Este trabalho está organizado em três seções: A seção \ref{metodologia_secao} apresenta a metodologia
   utilizada para o processo de construção da ontologia; a seção \ref{ontologia_secao} apresenta os progressos parciais
@@ -135,14 +137,14 @@
     
     \begin{figure}[!ht]
     \centering
-    \includegraphics[width=.6\textwidth]{caova.png}
+    \includegraphics[width=.47\textwidth]{caova.png}
     \caption{Componentes da ontologia CAOVA. Fonte: \cite{caova}.}
     \label{fig:caova}
     \end{figure}
     
     \begin{figure}[!ht]
     \centering
-    \includegraphics[width=.55\textwidth]{veacon.png}
+    \includegraphics[width=.47\textwidth]{veacon.png}
     \caption{Componentes da ontologia VEACON. Fonte: \cite{veacon}.}
     \label{fig:veacon}
     \end{figure}
@@ -155,12 +157,12 @@
   \subsection{Levantamento dos termos, classes e propriedades}
     
     Para levantar os termos inerentes ao contexto foi utilizada a técnica de \textit{CardSorting}.
-    Essa técnica consiste na escrita de termos em cartões \cite{hudson}. Esses termos para a ontologia representam: a interação do usuário com a 
-    aplicação,    quais seriam as perguntas que ele faria ao sistema e o que ele procuraria.
+    Essa técnica consiste na escrita de termos relacionados em cartões \cite{hudson}. Esses termos para a ontologia representam: a interação do usuário com a 
+    aplicação, quais seriam as perguntas que ele faria ao sistema e o que ele procuraria.
     
     A partir do levantamento dos principais termos, foi realizado um mapa conceitual
-    inicial com o intuito de organizar os termos em classes em uma hierarquia e para identificar seus
-    relacionamentos. Na tabela \ref{tab:classes} está a lista de classes identificadas e as propriedades que elas possuem.
+    para organizar estes termos em classes ordenados em uma hierarquia, de forma que 
+    fosse possível identificar seus relacionamentos. Na tabela \ref{tab:classes} está a lista de classes identificadas e as propriedades que elas possuem.
 
 % 	  \begin{table*}[!h]
 % 	  \centering
@@ -207,7 +209,7 @@
 	  \label{tab:classes}
 	  \end{longtable}
 	  
-	  Os relacionamentos entre as classes podem ser vistos melhor no modelo conceitual da ontologia ilustrado na
+	  Os relacionamentos entre as classes podem ser melhor compreendidos no modelo conceitual da ontologia ilustrado na
 	  Figura \ref{fig:modelo_conceitual}.
 	  
 % 	  \vfill
@@ -219,7 +221,7 @@
 	  \label{fig:modelo_conceitual}
 	  \end{figure}
 	  
-	  Todo acidente possui um tipo e uma causa, e envolve veículos, que por sua vez contém ocupantes.
+	  Todo acidente possui um tipo e uma causa, e envolve veículos que por sua vez contém ocupantes.
 	  No contexto de acidentes em rodovias, todo acidente ocorre em algum local de uma rodovia. As rodovias, possuem
 	  estatísticas sobre os acidentes associadas a elas. Próximo às rodovias podem existir hospitais, postos
 	  de assistência técnica e postos da PRF. Foi feita uma análise da lista de postos e delegacias da PRF onde
@@ -229,6 +231,9 @@
 	  Para a definição dos atributos das classes, utilizou-se como base as ontologias encontradas e o modelo de dados
 	  atual do sistema BR-Brasil fornecido pela PRF. Por se tratar de uma lista um pouco extensa, não serão discutidos aqui os 
 	  atributos de cada classe.
+	  
+	  Todas as classes apresentadas foram modeladas no \textit{software} Protégé (http://protege.stanford.edu/), versão 4.2,
+	  de acordo com o modelo conceitual apresentado na figura \ref{fig:modelo_conceitual}.
 	  
 %   \subsection{Definição dos atributos das classes}
 % 
@@ -278,11 +283,9 @@
   para cada classe, de modo a conseguir abrangir, com a ontologia, todos os dados necessários à PRF, fornecendo-lhes um modelo de dados 
   estruturado semanticamente.
      
-
-      
-      Com este trabalho, espera-se que a ontologia criada seja capaz de oferecer um arcabouço mais semântico para o \textit{software} 
-      ``Pé na estrada", fornecendo um modelo de dados estruturado semanticamente que permita que as funcionalidades
-      da aplicação evoluam, de modo a melhorar a apresentação e qualidade dos dados sobre os acidentes nas rodovias.
+  Com este trabalho, espera-se que a ontologia criada seja capaz de oferecer um arcabouço mais semântico para o \textit{software} 
+  ``Pé na estrada", fornecendo um modelo de dados estruturado semanticamente que permita que as funcionalidades
+  da aplicação evoluam, de modo a melhorar a apresentação e qualidade dos dados sobre os acidentes nas rodovias.
       
 % Figure example
 
