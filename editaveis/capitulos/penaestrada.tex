@@ -1,14 +1,13 @@
 \chapter{\textit{Software} 'Pé na Estrada'}
   
   Esse capítulo traz informações sobre o \textit{software} Pé na estrada, apresentando o modelo de dados fornecido pela PRF
-  pela lei dos dados abertos, uma breve explicação das funcionalidades e estruturação atual do \textit{software} e finalizando 
-  com as possíveis mudanças no \textit{software} com a utilização da ontologia.
+  pela lei dos dados abertos, uma breve explicação das funcionalidades e estruturação atual do \textit{software}.
   
   \section{Dados abertos}
   
     \input{editaveis/capitulos/dadosabertos}
   
-  \section{Pé na estrada}
+  \section{Informações da aplicação}
     A disponibilização das ocorrências de acidentes em rodovias federais através da PRF,
     embora exista, não é realizada de forma visual. Todavia, consiste na disponibilização de
     planilhas complexas que contém muitos dados.
@@ -35,6 +34,22 @@
     \caption[Modelo de dados do \textit{software} “Pé na Estrada”]{Modelo de dados do software “Pé na Estrada”.}
     \label{fig:modelo_penaestrada}
     \end{figure}
+  
+    O software ``Pé na Estrada'' foi desenvolvido na linguagem \textit{Ruby} com a utilização do \textit{framework Rails}. 
+    A partir disso, o sistema funciona com a arquitetura da Figura \ref{fig:arquitetura}.
 
-      \input{editaveis/capitulos/planejamentoDaAplicacao}
+    \begin{figure}[!htb]
+    \centering
+    \includegraphics[scale = 0.5]{figuras/arquiteturarails.png}
+    \caption[Arquitetura do \textit{software} “Pé na Estrada”]{Arquitetura do sistema. Fonte: Autores}
+    \label{fig:arquitetura}
+
+    \end{figure}
+
+    O \textit{Rails router} é responsável por estabelecer rotas que comunica o sistema com o navegador. Essa rota é obtida
+    na \textit{Controller} que a partir disso gera a \textit{View}. Os dados são obtidos e armazenados na base de dados através da \textit{Model}
+    que extende do \textit{Active Record} que é a classe responsável por fornecer os meios de comunicação com a camada de dados.
+
+   
+%     \input{editaveis/capitulos/planejamentoDaAplicacao}
   
