@@ -1,3 +1,59 @@
+\section{Grafos}
+
+	Grafos podem ser definidos como um conjunto de pontos relacionados entre si. Por exemplo, os pontos podem ser representados por pessoas, com linhas unindo pares de pessoas; ou pontos podem ser centros de comunicação que são relacionados por meio de \textit{links} de comunicação. Uma abstração matemática de situações desse tipo originam o conceito de um grafo \cite{bondy1976graph}. Existem dois tipos de grafos: grafos com matriz de adjacência e grafos com lista de adjacência.
+	
+\textbf{Grafo com matriz de adjacência:} Neste tipo de grafo, cada vértice representa uma linha e/ou coluna de uma matriz de adjacência \cite{monteiro2010graph}. A matriz 5x5 a seguir demonstra claramente esse tipo de grafo, pois cada linha ou coluna da matriz está sendo representada por uma das vértices do grafo.
+
+\begin{figure}[h] 
+\centering 
+\includegraphics[scale=0.6]{Figuras/grafo1.png} 
+\caption[ Exemplo de grafo com matriz de adjacência]
+{ Exemplo de grafo com matriz de adjacência. Fonte: \cite{DanielaLucas2008}}
+\label{fig:grafo1}
+\end{figure}
+
+
+
+\textbf{Lista de adjacência:} Neste tipo de grafo, cada vértice está associada a uma lista de vértices adjacentes \cite{monteiro2010graph}. Cada posição de um dado vetor com n posições aponta para uma lista de adjacências. Como demonstra o exemplo a seguir:
+
+
+\begin{figure}[h] 
+\centering 
+\includegraphics[scale=0.6]{Figuras/grafo2.png} 
+\caption[Exemplo de grafo com lista de adjacência]
+{ Exemplo de grafo com lista de adjacência. Fonte: \cite{DanielaLucas2008}}
+\label{fig:grafo1}
+\end{figure}
+
+
+
+\section{Banco de Dados Orientado a Grafos}
+
+O banco de dados orientado a grafos tem os mesmos conceitos gerais e simples dos bancos de dados relacionais, onde os pontos representam as classes e os objetos e as arestas representam os relacionamentos ou propriedades que podem existir entre esses objetos e classes \cite{paredaens1992overview}.
+
+Segundo \citeauthor{gyssens1994graph} (\citeyear{gyssens1994graph}), a estrutura de um banco de dados orientado a grafos é a mesma de um banco de dados relacional, a diferença é que o seu esquema é representado por um grafo.
+
+A ideia chave em um  banco de dados orientado a grafos é a mesma de um banco de dados relacional. A instância pode ser vista conceitualmente como um grafo onde cada objeto e cada valor é representado por um nó exclusivo. Além disso, cada um desses nós, é rotulado por um nome de uma classe, semelhante ao modelo de banco de dados relacional. E por fim, as arestas representam os múltiplos relacionamentos ou propriedades existentes entre os objetos \cite{paredaens1992overview}.
+
+A imagem ilustra a representação de um modelo de banco de dados orientado a grafos modelado na ferramenta Neo4j.
+
+\begin{figure}[h] 
+\centering 
+\includegraphics[scale=0.6]{Figuras/grafo3.png} 
+\caption[modelo de banco de dados orientado a grafos]
+{ modelo de banco de dados orientado a grafos. Fonte: \cite{DanielaLucas2008}}
+\label{fig:grafo1}
+\end{figure}
+
+
+\section{Neo4j}
+
+Neo4j banco de dados orientado a grafos baseado em JVM. Como líder em banco de dados orientado a grafos, seu modelo é intuitivo e expressivo. Para dados altamente conectados, NEO4J é milhares de vezes mais rápido do que os banco de dados relacionais, tornando-se ideal para gerenciar dados complexos em vários domínios, sejam eles financeiros, sociais, telecomunicações ou geoespaciais \cite{weber2012programmatic}.
+
+	O Neo4j pode ser usado para fornecer respostas que são muito complicadas para bancos de dados relacionais, incluindo o fornecimento de diagramas para mostrar como as tabelas SQL se relacionam entre si e a cadeia mais curta de relações entre duas tabelas \cite{neo4j}.
+
+
+
 \section{Metodologias para a construção de ontologias}
 
 \subsection{Método Cyc}
@@ -36,6 +92,8 @@ base de conhecimento Cyc em 1990 por Douglas Lenat e Ramanathan Guha
 \caption[Tabela abreviada do método Cyc]{Tabela abreviada do método Cyc. Fonte: \cite{DanielaLucas2008}}
 \end{figure}
 
+<<<<<<< HEAD
+=======
 % \subsection{Metodologia de Gruninger e Fox}    
 % 
 %  Esta metodologia baseia-se na experiência em desenvolvimento de ontologia do projeto Tove dentro do domínio de processos e atividades de negócios de
@@ -190,6 +248,7 @@ base de conhecimento Cyc em 1990 por Douglas Lenat e Ramanathan Guha
 % \caption[Tabela abreviada do método Sensus]{Tabela abreviada do método Sensus. Fonte: \cite{DanielaLucas2008}}
 % \end{figure}
 
+>>>>>>> 5c6b5878525c3b27d1ced18d8167b2e1280ec975
 \subsection{Método 101} 
  O método 101 foi criado por  Natalya F. Noy e Deborah L. McGuinness com base em experiências no desenvolvimento
  das ontologias de alimentos e vinhos, utilizando para isso o conceituadissimo software para a criação e edição de
@@ -214,6 +273,8 @@ base de conhecimento Cyc em 1990 por Douglas Lenat e Ramanathan Guha
 \caption[Tabela abreviada do método 101]{Tabela abreviada do método 101. Fonte: \cite{DanielaLucas2008}}
 \end{figure}
 
+<<<<<<< HEAD
+=======
 \input{editaveis/capitulos/metodologia101}
 
 % \subsection{Metodologia e Norma para construção de vocabulários controlados} 
@@ -250,3 +311,4 @@ base de conhecimento Cyc em 1990 por Douglas Lenat e Ramanathan Guha
 % \caption[Tabela abreviada da metodologia proposta no manual da BITI]
 % {Tabela abreviada da metodologia proposta no manual da BITI. Fonte: \cite{DanielaLucas2008}}
 % \end{figure}
+>>>>>>> 5c6b5878525c3b27d1ced18d8167b2e1280ec975
